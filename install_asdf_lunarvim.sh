@@ -76,5 +76,9 @@ bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/
 
 # From here, answer [y]es to all questions.
 
+# replace config.lua
+mv ~/.config/lvim/config.lua ~/.config/lvim/config.lua.bkp
+ln -vs "$(pwd)/config.lua" ~/.config/lvim/
+
 
 ## FIM
