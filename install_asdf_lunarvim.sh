@@ -24,6 +24,8 @@ cd /tmp
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 echo '' >> ~/.bashrc
 echo '# cleyrandal' >> ~/.bashrc
+echo '' >> ~/.bashrc
+echo '# asdf' >> ~/.bashrc
 echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc
 echo '. "$HOME/.asdf/completions/asdf.bash"' >> ~/.bashrc
 source ~/.bashrc
@@ -79,6 +81,17 @@ bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/
 # replace config.lua
 mv ~/.config/lvim/config.lua ~/.config/lvim/config.lua.bkp
 ln -vs "$(pwd)/config.lua" ~/.config/lvim/
+
+# Install Starship
+curl -sS https://starship.rs/install.sh | sh
+# Set up your shell to use Starship
+echo '' >> ~/.bashrc
+echo '# starship' >> ~/.bashrc
+# Configure Starship
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
+starship preset nerd-font-symbols -o ~/.config/starship.toml # básico
+source ~/.bashrc
+
 
 
 ## FIM
